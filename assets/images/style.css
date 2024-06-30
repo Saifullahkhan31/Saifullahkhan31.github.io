@@ -2,44 +2,32 @@
 
 :root {
 
-    /**
+  /**
      * colors
      */
-  
-    /* gradient */
-  
-    --bg-gradient-onyx: linear-gradient(
-      to bottom right, 
-      hsl(240, 1%, 25%) 3%, 
-      hsl(0, 0%, 19%) 97%
-    );
-    --bg-gradient-jet: linear-gradient(
-      to bottom right, 
-      hsla(240, 1%, 18%, 0.251) 0%, 
-      hsla(240, 2%, 11%, 0) 100%
-    ), hsl(240, 2%, 13%);
-    --bg-gradient-yellow-1: linear-gradient(
-      to bottom right, 
-      hsl(200, 63%, 66%) 0%, 
-      hsla(36, 100%, 69%, 0) 50%
-    );
-    --bg-gradient-yellow-2: linear-gradient(
-      135deg, 
-      hsla(45, 100%, 71%, 0.251) 0%, 
-      hsla(35, 100%, 68%, 0) 59.86%
-    ), hsl(240, 2%, 13%);
-    --border-gradient-onyx: linear-gradient(
-      to bottom right, 
-      hsl(0, 0%, 25%) 0%, 
-      hsla(0, 0%, 25%, 0) 50%
-    );
-    --text-gradient-yellow: linear-gradient(
-      to right, 
-      hsl(200, 63%, 66%), 
-      hsl(200, 63%, 66%)
-    );
 
-    /* solid */
+  /* gradient */
+
+  --bg-gradient-onyx: linear-gradient(to bottom right,
+      hsl(200, 63%, 66%) 3%,
+      hsl(0, 0%, 19%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right,
+      hsla(240, 1%, 18%, 0.251) 0%,
+      hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right,
+      hsl(200, 63%, 66%) 0%,
+      hsla(36, 100%, 69%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg,
+      hsl(200, 63%, 66%) 0%,
+      hsla(35, 100%, 68%, 0) 59.86%), hsl(240, 2%, 13%);
+  --border-gradient-onyx: linear-gradient(to bottom right,
+      hsl(200, 63%, 66%) 0%,
+      hsla(0, 0%, 25%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right,
+      hsl(200, 63%, 66%),
+      hsl(200, 63%, 66%));
+
+  /* solid */
 
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
@@ -51,7 +39,7 @@
   --orange-yellow-crayola: hsl(200, 63%, 66%);
   --vegas-gold: hsl(200, 63%, 66%);
   --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
+  --light-gray-70: hsl(200, 63%, 66%);
   --bittersweet-shimmer: hsl(200, 63%, 66%);
 
   /**
@@ -80,7 +68,7 @@
   /**
    * shadow
    */
-  
+
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
@@ -103,45 +91,74 @@
   #RESET
 \*-----------------------------------*/
 
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  a { text-decoration: none; }
-  
-  li { list-style: none; }
-  
-  img, ion-icon, a, button, time, span { display: block; }
-  
-  button {
-    font: inherit;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-  }
-  
-  input, textarea {
-    display: block;
-    width: 100%;
-    background: none;
-    font: inherit;
-  }
-  
-  ::selection {
-    background: var(--orange-yellow-crayola);
-    color: var(--smoky-black);
-  }
-  
-  :focus { outline-color: var(--orange-yellow-crayola); }
-  
-  html { font-family: var(--ff-poppins); }
-  
-  body { background: var(--smoky-black); }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .sidebar,
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* Specific rule to show numbers in project modal */
+.project-modal ol li {
+  list-style: decimal;
+  /* Show numbers for ordered lists in project modal */
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+::selection {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+}
+
+:focus {
+  outline-color: var(--orange-yellow-crayola);
+}
+
+html {
+  font-family: var(--ff-poppins);
+}
+
+body {
+  background: var(--smoky-black);
+}
+
+
+/* SIDE STYLES */
+
+.sidebar,
 article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
@@ -182,9 +199,13 @@ article {
   z-index: -1;
 }
 
-.icon-box ion-icon { --ionicon-stroke-width: 35px; }
+.icon-box ion-icon {
+  --ionicon-stroke-width: 35px;
+}
 
-article { display: none; }
+article {
+  display: none;
+}
 
 article.active {
   display: block;
@@ -192,8 +213,13 @@ article.active {
 }
 
 @keyframes fade {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .h2,
@@ -204,11 +230,17 @@ article.active {
   text-transform: capitalize;
 }
 
-.h2 { font-size: var(--fs-1); }
+.h2 {
+  font-size: var(--fs-1);
+}
 
-.h3 { font-size: var(--fs-2); }
+.h3 {
+  font-size: var(--fs-2);
+}
 
-.h4 { font-size: var(--fs-4); }
+.h4 {
+  font-size: var(--fs-4);
+}
 
 .h5 {
   font-size: var(--fs-7);
@@ -232,8 +264,10 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-  width: 5px; /* for vertical scrollbar */
-  height: 5px; /* for horizontal scrollbar */
+  width: 5px;
+  /* for vertical scrollbar */
+  height: 5px;
+  /* for horizontal scrollbar */
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
@@ -246,7 +280,9 @@ article.active {
   border-radius: 5px;
 }
 
-.has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
 
 .content-card {
   position: relative;
@@ -275,13 +311,13 @@ article.active {
 \*-----------------------------------*/
 
 main {
-    margin: 15px 12px;
-    margin-bottom: 75px;
-    min-width: 259px;
-  }
-  
-  
-  
+  margin: 15px 12px;
+  margin-bottom: 75px;
+  min-width: 259px;
+}
+
+
+
 /*-----------------------------------*\
   #SIDEBAR
 \*-----------------------------------*/
@@ -294,7 +330,9 @@ main {
   border-right: 1px solid #a5c6e9;
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active {
+  max-height: 405px;
+}
 
 .sidebar-info {
   position: relative;
@@ -352,12 +390,18 @@ main {
 }
 
 .info_more-btn:hover,
-.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
+.info_more-btn:focus {
+  background: var(--bg-gradient-yellow-1);
+}
 
 .info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+.info_more-btn:focus::before {
+  background: var(--bg-gradient-yellow-2);
+}
 
-.info_more-btn span { display: none; }
+.info_more-btn span {
+  display: none;
+}
 
 .sidebar-info_more {
   opacity: 0;
@@ -391,16 +435,23 @@ main {
 .contact-title {
   color: var(--light-gray-70);
   font-size: var(--fs-8);
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 2px;
 }
+
 
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
   font-size: var(--fs-7);
 }
 
-.contact-info address { font-style: normal; }
+.contact-info address {
+  font-style: normal;
+}
+
+.contact-link:hover {
+  color: hsl(200, 63%, 66%);
+}
 
 /* .social-list {
   display: flex;
@@ -432,17 +483,21 @@ main {
 }
 
 .social-item .social-link {
-  color: #000; /* Default icon color */
-  font-size: 26px; /* Icon size */
-  transition: color 0.5s ease;
+  color: #ffffff;
+  /* Default icon color */
+  font-size: 26px;
+  /* Icon size */
+  transition: color 0.3s ease;
 }
 
 .social-link:hover {
-  color: #007bff; /* Icon color on hover */
+  color: hsl(200, 63%, 66%);
+  /* Icon color on hover */
 }
 
 .tooltip {
-  display: block; /* Initially hide tooltip */
+  display: block;
+  /* Initially hide tooltip */
   position: absolute;
   background-color: #555;
   color: #fff;
@@ -451,14 +506,21 @@ main {
   padding: 5px;
   z-index: 1;
   /* Adjust positioning as needed */
-  top: -30px; /* Position above the icon */
+  top: -30px;
+  /* Position above the icon */
   left: 50%;
   transform: translateX(-50%);
 }
 
 .social-link:hover .tooltip {
-  display: box; /* Show tooltip on hover */
+  display: box;
+  /* Show tooltip on hover */
 }
+
+
+/*-----------------------------------*\
+  #NAVBAR
+\*-----------------------------------*/
 
 .navbar {
   position: fixed;
@@ -489,9 +551,13 @@ main {
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+.navbar-link:focus {
+  color: var(--light-gray-70);
+}
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active {
+  color: var(--orange-yellow-crayola);
+}
 
 
 
@@ -500,7 +566,9 @@ main {
   #ABOUT
 \*-----------------------------------*/
 
-.about .article-title { margin-bottom: 15px; }
+.about .article-title {
+  margin-bottom: 15px;
+}
 
 .about-text {
   color: var(--light-gray);
@@ -509,7 +577,9 @@ main {
   line-height: 1.6;
 }
 
-.about-text p { margin-bottom: 15px; }
+.about-text p {
+  margin-bottom: 15px;
+}
 
 
 
@@ -517,9 +587,13 @@ main {
  * #service 
  */
 
-.service { margin-bottom: 35px; }
+.service {
+  margin-bottom: 35px;
+}
 
-.service-title { margin-bottom: 20px; }
+.service-title {
+  margin-bottom: 20px;
+}
 
 .service-list {
   display: grid;
@@ -545,13 +619,21 @@ main {
   z-index: -1;
 }
 
-.service-icon-box { margin-bottom: 10px; }
+.service-icon-box {
+  margin-bottom: 10px;
+}
 
-.service-icon-box img { margin: auto; }
+.service-icon-box img {
+  margin: auto;
+}
 
-.service-content-box { text-align: center; }
+.service-content-box {
+  text-align: center;
+}
 
-.service-item-title { margin-bottom: 7px; }
+.service-item-title {
+  margin-bottom: 7px;
+}
 
 .service-item-text {
   color: var(--light-gray);
@@ -566,14 +648,18 @@ main {
   #RESUME
 \*-----------------------------------*/
 
-.article-title { margin-bottom: 30px; }
+.article-title {
+  margin-bottom: 30px;
+}
 
 
 /**
  * education and experience 
  */
 
-.timeline { margin-bottom: 30px; }
+.timeline {
+  margin-bottom: 30px;
+}
 
 .timeline .title-wrapper {
   display: flex;
@@ -587,9 +673,13 @@ main {
   margin-left: 45px;
 }
 
-.timeline-item { position: relative; }
+.timeline-item {
+  position: relative;
+}
 
-.timeline-item:not(:last-child) { margin-bottom: 20px; }
+.timeline-item:not(:last-child) {
+  margin-bottom: 20px;
+}
 
 .timeline-item-title {
   font-size: var(--fs-6);
@@ -636,12 +726,18 @@ main {
  * skills 
  */
 
-.skills-title { margin-bottom: 20px; }
+.skills-title {
+  margin-bottom: 20px;
+}
 
-.skills-list { padding: 20px; }
+.skills-list {
+  padding: 20px;
+}
 
 
-.skills-item:not(:last-child) { margin-bottom: 15px; }
+.skills-item:not(:last-child) {
+  margin-bottom: 15px;
+}
 
 .skill .title-wrapper {
   display: flex;
@@ -671,14 +767,16 @@ main {
 
 /* Wrapper for the download button */
 .download-resume-wrapper {
-  margin-bottom: 15px; /* Adjust as needed */
+  margin-bottom: 15px;
+  /* Adjust as needed */
 }
 
 /* Style for the download button */
 .download-btn {
   display: inline-block;
   padding: 10px 10px;
-  background-color: #007BFF; /* Button color */
+  background-color: #007BFF;
+  /* Button color */
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -686,10 +784,12 @@ main {
 }
 
 .download-btn:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: #0056b3;
+  /* Darker shade for hover effect */
 }
 
 /* Adjust spacing around the education section */
 .timeline .title-wrapper {
-  margin-top: 20px; /* Adjust as needed to prevent overlap */
+  margin-top: 20px;
+  /* Adjust as needed to prevent overlap */
 }
