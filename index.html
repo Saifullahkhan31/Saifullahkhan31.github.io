@@ -565,8 +565,204 @@ content.
       </article>
 
 
-      
+      <!--
+        - #PORTFOLIO
+      -->
 
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <!-- <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul> -->
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value></div>
+
+              <!-- <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div> -->
+
+            </button>
+
+            <!-- <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul> -->
+
+          </div>
+
+          <ul class="project-list">
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-dialog="projectDialog1">
+                <div class="project-info">
+                  <h3 class="project-title">Inventory Management System</h3>
+                  <br>
+                  <p class="project-languages">Languages: Java</p>
+                </div>
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+              </a>
+            </li>
+            <li class="project-item active">
+              <a href="#" class="project-link" data-dialog="projectDialog2">
+                <div class="project-info">
+                  <h3 class="project-title">Text Editor</h3>
+                  <br>
+                  <p class="project-languages">Languages: C++</p>
+                </div>
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+              </a>
+            </li>
+            <li class="project-item active">
+              <a href="#" class="project-link" data-dialog="projectDialog3">
+                <div class="project-info">
+                  <h3 class="project-title">Connect 3 Game</h3>
+                  <br>
+                  <p class="project-languages">Languages: C</p>
+                </div>
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" class="project-link" data-dialog="projectDialog4">
+                <div class="project-info">
+                  <h3 class="project-title">Hangman Game</h3>
+                  <br>
+                  <p class="project-languages">Languages: C</p>
+                </div>
+                <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Dialog Boxes -->
+          <div id="projectDialog1" class="modal-container">
+            <div class="overlay"></div>
+            <div class="project-modal">
+              <span class="modal-close-btn">&times;</span>
+              <h3 class="modal-title">Inventory Management System</h3>
+              <div class="modal-content">
+                <ol>
+                  <li>Developed an Inventory Management System in Java, allowing users to add, remove, search, and sort
+                    products by ID, name, price, or quantity.</li>
+                  <li>Implemented a linked list structure to manage the inventory, featuring functionalities for dynamic
+                    updates and comprehensive product management.</li>
+                  <li>The system includes a user-friendly menu for interactive operations and ensures efficient
+                    inventory handling.</li>
+                </ol>
+                <a href="https://github.com/your-repository" target="_blank" class="btn">Source Code</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="projectDialog2" class="modal-container">
+            <div class="overlay"></div>
+            <div class="project-modal">
+              <span class="modal-close-btn">&times;</span>
+              <h3 class="modal-title">Text Editor</h3>
+              <div class="modal-content">
+                <ol>
+                  <li>Implemented a basic text editor in C++ capable of opening, displaying, inserting, and deleting
+                    text lines within a file.</li>
+                  <li>The editor utilizes dynamic memory allocation to handle text lines and provides a menu-driven
+                    interface for user interactions. Features include file handling, input validation, and saving
+                    changes back to the file.</li>
+                </ol>
+                <a href="https://github.com/your-repository" target="_blank" class="btn">Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="projectDialog3" class="modal-container">
+            <div class="overlay"></div>
+            <div class="project-modal">
+              <span class="modal-close-btn">&times;</span>
+              <h3 class="modal-title">Connect 3 Game</h3>
+              <div class="modal-content">
+                <ol>
+                  <li>Developed a Connect 3 game in C, featuring a 7x7 board. Implemented functions to display the
+                    board, validate moves, make moves, check for wins, and detect ties.
+                  </li>
+                  <li>The game includes a user interface for two players, with the ability to play multiple rounds.
+                  </li>
+                  <li>Demonstrated proficiency in C programming, game logic, and user interaction handling
+                  </li>
+                </ol>
+                <a href="https://github.com/Saifullahkhan31/Connect-3-Game" target="_blank" class="btn">Source
+                  Code</a>
+              </div>
+            </div>
+          </div>
+
+          <div id="projectDialog4" class="modal-container">
+            <div class="overlay"></div>
+            <div class="project-modal">
+              <span class="modal-close-btn">&times;</span>
+              <h3 class="modal-title">Hangman Game</h3>
+              <div class="modal-content">
+                <ol>
+                  <li>Developed a Hangman game in both C and Python using the Tkinter library.</li>
+                  <li>Demonstrated skills in game development, programming in C, and GUl development in Python.
+                  </li>
+                </ol>
+                <a href="https://github.com/Saifullahkhan31/C-Hangman-Game" target="_blank" class="btn">Source Code</a>
+              </div>
+            </div>
+          </div>
+
+          </ul>
+
+        </section>
+
+      </article>
 
 
 
