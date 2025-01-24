@@ -173,6 +173,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("https://leetcode-stats-api.herokuapp.com/saifullah31")
     .then(response => response.json())
     .then(data => {
+      const totalProblems = 200; 
+// Exact total number of problems: 3431 
+// For now using small value for Visualization purpose
       const leetcodeHTML = `
         <div class="leetcode-item">
           <h3 class="leetcode-item-title">Total Solved: ${data.totalSolved}</h3>
@@ -187,21 +190,21 @@ document.addEventListener("DOMContentLoaded", () => {
       new Chart(leetcodeChartCtx, {
         type: 'doughnut',
         data: {
-          labels: ['Easy', 'Medium', 'Hard'],
+          labels: ['Easy', 'Medium', 'Hard', 'Remaining'],
           datasets: [{
             label: 'LeetCode Problems Solved',
-            data: [data.easySolved, data.mediumSolved, data.hardSolved],
-            backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
-            borderColor: ['#388e3c', '#f57c00', '#d32f2f'],
+            data: [data.easySolved, data.mediumSolved, data.hardSolved, totalProblems - data.totalSolved],
+            backgroundColor: ['#4caf50', '#ff9800', '#f44336', '#e0e0e0'],
+            borderColor: ['#388e3c', '#f57c00', '#d32f2f', '#e0e0e0'],
             borderWidth: 1,
-            hoverBackgroundColor: ['#66bb6a', '#ffa726', '#ef5350'],
-            hoverBorderColor: ['#2e7d32', '#e65100', '#c62828'],
+            hoverBackgroundColor: ['#66bb6a', '#ffa726', '#ef5350', '#e0e0e0'],
+            hoverBorderColor: ['#2e7d32', '#e65100', '#c62828', '#e0e0e0'],
             hoverBorderWidth: 3
           }]
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true, // Allow the chart to resize
+          maintainAspectRatio: false, // Allow the chart to resize
           cutout: '85%', // Adjust the cutout percentage to control the thickness of the ring
           plugins: {
             legend: {
