@@ -1335,10 +1335,11 @@ main {
 }
 
 #leetcode-chart {
+  position: absolute;
   max-width: 250px; /* Adjust the width as needed */
   width: 250px;
   height: 250px; /* Adjust the height as needed */
-  margin: 130px; /* Center the chart */
+  margin-left: 400px; /* Center the chart */
 }
 
 /*-----------------------------------*\
