@@ -174,10 +174,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       const leetcodeHTML = `
         <div class="leetcode-item">
-          <h3 class="leetcode-item-title">Total Solved: ${data.totalSolved}</h3>
-          <p class="leetcode-item-text1">Easy: ${data.easySolved}</p>
-          <p class="leetcode-item-text2">Medium: ${data.mediumSolved}</p>
-          <p class="leetcode-item-text3">Hard: ${data.hardSolved}</p>
+          <h3 class="leetcode-item-title">Total Problems Solved: ${data.totalSolved}/${data.totalQuestions}</h3>
+          <p class="leetcode-item-text1">Easy: ${data.easySolved}/${data.totalEasy}</p>
+          <p class="leetcode-item-text2">Medium: ${data.mediumSolved}/${data.totalMedium}</p>
+          <p class="leetcode-item-text3">Hard: ${data.hardSolved}/${data.totalHard}</p>
         </div>
       `;
       leetcodeProgressContainer.innerHTML = leetcodeHTML;
