@@ -168,19 +168,70 @@ for (let i = 0; i < selectItems.length; i++) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const leetcodeProgressContainer = document.getElementById("leetcode-progress");
+  const leetcodeChartCtx = document.getElementById("leetcode-chart").getContext("2d");
 
   fetch("https://leetcode-stats-api.herokuapp.com/saifullah31")
     .then(response => response.json())
     .then(data => {
       const leetcodeHTML = `
         <div class="leetcode-item">
-          <h3 class="leetcode-item-title">Total Problems Solved: ${data.totalSolved}/${data.totalQuestions}</h3>
-          <p class="leetcode-item-text1">Easy: ${data.easySolved}/${data.totalEasy}</p>
-          <p class="leetcode-item-text2">Medium: ${data.mediumSolved}/${data.totalMedium}</p>
-          <p class="leetcode-item-text3">Hard: ${data.hardSolved}/${data.totalHard}</p>
+          <h3 class="leetcode-item-title">Total Solved: ${data.totalSolved}</h3>
+          <p class="leetcode-item-text1">Easy: ${data.easySolved}</p>
+          <p class="leetcode-item-text2">Medium: ${data.mediumSolved}</p>
+          <p class="leetcode-item-text3">Hard: ${data.hardSolved}</p>
         </div>
       `;
       leetcodeProgressContainer.innerHTML = leetcodeHTML;
+
+      // Render the chart
+      new Chart(leetcodeChartCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Easy', 'Medium', 'Hard'],
+          datasets: [{
+            label: 'LeetCode Problems Solved',
+            data: [data.easySolved, data.mediumSolved, data.hardSolved],
+            backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
+            borderColor: ['#388e3c', '#f57c00', '#d32f2f'],
+            borderWidth: 1,
+            hoverBackgroundColor: ['#66bb6a', '#ffa726', '#ef5350'],
+            hoverBorderColor: ['#2e7d32', '#e65100', '#c62828'],
+            hoverBorderWidth: 3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true, // Allow the chart to resize
+          cutout: '85%', // Adjust the cutout percentage to control the thickness of the ring
+          plugins: {
+            legend: {
+              display: false // Hide the legend
+            },
+            title: {
+              display: true,
+              text: 'LeetCode Problems Solved',
+              font: {
+                size: 18
+              },
+              color: '#fff'
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  let label = context.label || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (context.parsed !== null) {
+                    label += context.parsed;
+                  }
+                  return label;
+                }
+              }
+            }
+          }
+        }
+      });
     })
     .catch(error => {
       console.error("Error fetching LeetCode data:", error);

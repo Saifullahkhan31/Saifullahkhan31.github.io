@@ -1326,6 +1326,19 @@ main {
   line-height: 1.6;
 }
 
+.leetcode-stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+#leetcode-chart {
+  max-width: 150px; /* Adjust the width as needed */
+  width: 150%;
+  height: 150px; /* Adjust the height as needed */
+  margin: 0 auto; /* Center the chart */
+}
 
 /*-----------------------------------*\
   #CONTACT
