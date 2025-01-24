@@ -175,9 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const leetcodeHTML = `
         <div class="leetcode-item">
           <h3 class="leetcode-item-title">Total Solved: ${data.totalSolved}</h3>
-          <p class="leetcode-item-text">Easy: ${data.easySolved}</p>
-          <p class="leetcode-item-text">Medium: ${data.mediumSolved}</p>
-          <p class="leetcode-item-text">Hard: ${data.hardSolved}</p>
+          <p class="leetcode-item-text1">Easy: ${data.easySolved}</p>
+          <p class="leetcode-item-text2">Medium: ${data.mediumSolved}</p>
+          <p class="leetcode-item-text3">Hard: ${data.hardSolved}</p>
         </div>
       `;
       leetcodeProgressContainer.innerHTML = leetcodeHTML;

@@ -1294,11 +1294,26 @@ main {
 }
 
 .leetcode-item-title {
-  margin-bottom: 7px;
+  text-align: center;
+  color: white;
 }
 
-.leetcode-item-text {
-  color: var(--light-gray);
+.leetcode-item-text1 {
+  color: rgb(0, 253, 185);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
+}
+
+.leetcode-item-text2 {
+  color: rgb(220, 176, 18);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
+}
+
+.leetcode-item-text3 {
+  color: rgb(213, 0, 0);
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
   line-height: 1.6;
