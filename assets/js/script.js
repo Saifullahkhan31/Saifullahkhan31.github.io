@@ -166,7 +166,26 @@ for (let i = 0; i < selectItems.length; i++) {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const leetcodeProgressContainer = document.getElementById("leetcode-progress");
 
+  fetch("https://leetcode-stats-api.herokuapp.com/saifullah31")
+    .then(response => response.json())
+    .then(data => {
+      const leetcodeHTML = `
+        <div class="leetcode-item">
+          <h3 class="leetcode-item-title">Total Solved: ${data.totalSolved}</h3>
+          <p class="leetcode-item-text">Easy: ${data.easySolved}</p>
+          <p class="leetcode-item-text">Medium: ${data.mediumSolved}</p>
+          <p class="leetcode-item-text">Hard: ${data.hardSolved}</p>
+        </div>
+      `;
+      leetcodeProgressContainer.innerHTML = leetcodeHTML;
+    })
+    .catch(error => {
+      console.error("Error fetching LeetCode data:", error);
+    });
+});
 
 
 // contact form variables
